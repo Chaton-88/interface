@@ -85,14 +85,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pf-a6-6zy">
-                                <rect key="frame" x="149" y="145" width="116" height="60"/>
+                                <rect key="frame" x="118" y="138" width="178" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <state key="normal" title="New post">
+                                <state key="normal" title="Online courses">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="niT-N7-eho" kind="show" id="5by-4F-AU3"/>
+                                    <segue destination="niT-N7-eho" kind="show" identifier="showPost" id="5by-4F-AU3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -105,7 +105,7 @@
             </objects>
             <point key="canvasLocation" x="1528.985507246377" y="-368.30357142857139"/>
         </scene>
-        <!--New post-->
+        <!--Post View Controller-->
         <scene sceneID="Do7-Ns-1G8">
             <objects>
                 <viewController id="niT-N7-eho" customClass="PostViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,7 +115,7 @@
                         <viewLayoutGuide key="safeArea" id="65g-rz-5gy"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New post" id="JYq-H0-Hi5"/>
+                    <navigationItem key="navigationItem" id="JYq-H0-Hi5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8l-3D-IWT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
