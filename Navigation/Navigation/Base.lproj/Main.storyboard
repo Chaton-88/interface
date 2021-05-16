@@ -14,6 +14,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8Fz-RU-hv7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ah2-V0-9WE">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -85,10 +86,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pf-a6-6zy">
-                                <rect key="frame" x="118" y="138" width="178" height="112"/>
+                                <rect key="frame" x="85" y="130" width="245" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <state key="normal" title="Online courses">
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title=" New photo editor!">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -115,11 +117,48 @@
                         <viewLayoutGuide key="safeArea" id="65g-rz-5gy"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JYq-H0-Hi5"/>
+                    <navigationItem key="navigationItem" id="JYq-H0-Hi5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="zUY-Mm-6mF">
+                            <connections>
+                                <action selector="tap:" destination="niT-N7-eho" id="vFd-cT-w5K"/>
+                                <segue destination="29i-rq-zp0" kind="presentation" id="zOt-nQ-8yj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8l-3D-IWT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2220" y="-368"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="iGT-Cs-Jf9">
+            <objects>
+                <viewController id="29i-rq-zp0" customClass="InfoViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NDE-0T-5G3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmN-G6-4q7">
+                                <rect key="frame" x="102" y="132" width="212" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80421707369754136" green="0.57907404260060258" blue="0.84267407655715942" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Add a photo">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tap:" destination="29i-rq-zp0" eventType="touchUpInside" id="HdV-S4-5pW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZC5-tt-bq9"/>
+                        <color key="backgroundColor" red="0.96930998563766479" green="0.96252035997285645" blue="0.75402636774902432" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="82z-ew-hzB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qrG-nH-RY9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2937.68115942029" y="-368.30357142857139"/>
         </scene>
     </scenes>
     <resources>

@@ -17,7 +17,7 @@ class FeedViewController: UIViewController {
         var title: String
     }
     
-    var myPost = Post(title: "Online courses")
+    var myPost = Post(title: "Photo editor")
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showPost" else {

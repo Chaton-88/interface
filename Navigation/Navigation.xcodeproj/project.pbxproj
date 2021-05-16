@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0488CFF726516AE8004AA35D /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488CFF626516AE8004AA35D /* InfoViewController.swift */; };
 		04D4B53126504544008BD60A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4B53026504544008BD60A /* AppDelegate.swift */; };
 		04D4B53326504544008BD60A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4B53226504544008BD60A /* SceneDelegate.swift */; };
 		04D4B53526504544008BD60A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4B53426504544008BD60A /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0488CFF626516AE8004AA35D /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		04D4B52D26504544008BD60A /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D4B53026504544008BD60A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D4B53226504544008BD60A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				04D4B53226504544008BD60A /* SceneDelegate.swift */,
 				04D4B53426504544008BD60A /* ViewController.swift */,
 				04D4B53626504544008BD60A /* Main.storyboard */,
+				0488CFF626516AE8004AA35D /* InfoViewController.swift */,
 				04D4B5482650490D008BD60A /* PostViewController.swift */,
 				04D4B544265047A0008BD60A /* FeedViewController.swift */,
 				04D4B546265047BF008BD60A /* ProfileViewController.swift */,
@@ -149,6 +152,7 @@
 				04D4B5492650490D008BD60A /* PostViewController.swift in Sources */,
 				04D4B53526504544008BD60A /* ViewController.swift in Sources */,
 				04D4B53126504544008BD60A /* AppDelegate.swift in Sources */,
+				0488CFF726516AE8004AA35D /* InfoViewController.swift in Sources */,
 				04D4B547265047BF008BD60A /* ProfileViewController.swift in Sources */,
 				04D4B545265047A0008BD60A /* FeedViewController.swift in Sources */,
 				04D4B53326504544008BD60A /* SceneDelegate.swift in Sources */,
