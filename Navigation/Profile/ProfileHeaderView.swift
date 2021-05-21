@@ -11,6 +11,7 @@ import UIKit
 class ProfileHeaderView: UIView {
     
     private let userImage = UIImageView(image: UIImage(named: "unnamed.jpeg"))
+    private let userNickname = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +25,7 @@ class ProfileHeaderView: UIView {
     
     func setupUI() {
         addSubview(userImage)
+        addSubview(userNickname)
     }
     
     override func layoutSubviews() {
@@ -38,5 +40,10 @@ class ProfileHeaderView: UIView {
         userImage.layer.borderColor = UIColor.white.cgColor
         userImage.layer.cornerRadius = userImage.frame.size.width/2
         userImage.clipsToBounds = true
+        
+        userNickname.frame = CGRect(x: userImage.frame.maxX + 30, y: self.safeAreaInsets.top + 27, width: 100, height: 20)
+        userNickname.text = "Incognito"
+        userNickname.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        userNickname.textColor = .black
     }
 }
