@@ -13,6 +13,7 @@ class ProfileHeaderView: UIView {
     private let userImage = UIImageView(image: UIImage(named: "unnamed.jpeg"))
     private let userNickname = UILabel()
     private let userStatus = UILabel()
+    private let showStatusButton = UIButton()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,6 +29,7 @@ class ProfileHeaderView: UIView {
         addSubview(userImage)
         addSubview(userNickname)
         addSubview(userStatus)
+        addSubview(showStatusButton)
     }
     
     override func layoutSubviews() {
@@ -48,9 +50,15 @@ class ProfileHeaderView: UIView {
         userNickname.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         userNickname.textColor = .black
         
-        userStatus.frame = CGRect(x:userImage.frame.maxX + 30, y: userNickname.frame.maxY + 30, width: 250, height: 20)
+        userStatus.frame = CGRect(x: userImage.frame.maxX + 30, y: showStatusButton.frame.maxY - 34 - userStatus.bounds.height, width: 250, height: 18)
         userStatus.text = "Waiting for something..."
         userStatus.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         userStatus.textColor = .gray
+        
+        showStatusButton.frame = CGRect(x: self.safeAreaInsets.left + 16, y: userImage.frame.maxY + 16, width: self.bounds.width - self.safeAreaInsets.left - self.safeAreaInsets.right - 32, height: 50)
+        showStatusButton.setTitle("Show status", for: .normal)
+        showStatusButton.setTitleColor(.white, for: .normal)
+        showStatusButton.backgroundColor = .blue
+        
     }
 }
