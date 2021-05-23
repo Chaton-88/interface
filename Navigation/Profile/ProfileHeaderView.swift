@@ -74,5 +74,10 @@ class ProfileHeaderView: UIView {
         showStatusButton.layer.shadowRadius = 4
         showStatusButton.layer.shadowColor = UIColor.black.cgColor
         showStatusButton.layer.shadowOpacity = 0.7
+        showStatusButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     }
+        
+        @objc func buttonPressed() {
+            print(userStatus.text ?? "User status is missing")
+        }
 }
