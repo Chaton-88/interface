@@ -13,12 +13,6 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    struct Post {
-        var title: String
-    }
-    
-    var myPost = Post(title: "Photo editor")
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showPost" else {
             return
@@ -27,6 +21,9 @@ class FeedViewController: UIViewController {
         guard let vc = segue.destination as? PostViewController else {
             return
         }
-        vc.title = myPost.title
+        
+        vc.myPost.title = "Photo editor"
     }
 }
+
+

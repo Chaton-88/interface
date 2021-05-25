@@ -17,6 +17,7 @@
 		04D4B545265047A0008BD60A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4B544265047A0008BD60A /* FeedViewController.swift */; };
 		04D4B547265047BF008BD60A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4B546265047BF008BD60A /* ProfileViewController.swift */; };
 		04D4B5492650490D008BD60A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4B5482650490D008BD60A /* PostViewController.swift */; };
+		04F27627265C1B0B001E2045 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27626265C1B0B001E2045 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		04D4B544265047A0008BD60A /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		04D4B546265047BF008BD60A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		04D4B5482650490D008BD60A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		04F27626265C1B0B001E2045 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				0488CFF626516AE8004AA35D /* InfoViewController.swift */,
 				04D4B5482650490D008BD60A /* PostViewController.swift */,
 				04D4B544265047A0008BD60A /* FeedViewController.swift */,
+				04F27626265C1B0B001E2045 /* Post.swift */,
 				04D4B546265047BF008BD60A /* ProfileViewController.swift */,
 				04D4B53926504545008BD60A /* Assets.xcassets */,
 				04D4B53B26504545008BD60A /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 				04D4B5492650490D008BD60A /* PostViewController.swift in Sources */,
 				04D4B53526504544008BD60A /* ViewController.swift in Sources */,
 				04D4B53126504544008BD60A /* AppDelegate.swift in Sources */,
+				04F27627265C1B0B001E2045 /* Post.swift in Sources */,
 				0488CFF726516AE8004AA35D /* InfoViewController.swift in Sources */,
 				04D4B547265047BF008BD60A /* ProfileViewController.swift in Sources */,
 				04D4B545265047A0008BD60A /* FeedViewController.swift in Sources */,

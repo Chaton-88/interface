@@ -8,8 +8,12 @@
 import UIKit
 
 class PostViewController: UIViewController {
-
+    
+    var myPost = Post()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = myPost.title
     }
 }
