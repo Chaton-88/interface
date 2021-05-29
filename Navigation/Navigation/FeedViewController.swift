@@ -9,6 +9,8 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
+    var post = Post(title: "Photo editor")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,7 +24,7 @@ class FeedViewController: UIViewController {
             return
         }
         
-        vc.myPost.title = "Photo editor"
+        vc.myPost = post
     }
 }
 
