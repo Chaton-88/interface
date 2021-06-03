@@ -10,20 +10,23 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    private let someView: ProfileHeaderView = ProfileHeaderView()
-
+    let myButton: UIButton = {
+        let myButton = UIButton()
+        myButton.setTitle("My button", for: .normal)
+        myButton.setTitleColor(.white, for: .normal)
+        myButton.backgroundColor = .blue
+        return myButton
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .lightGray
         
-        view.addSubview(someView)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        someView.frame = view.frame
-        
+        self.view.addSubview(myButton)
+        myButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            myButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
+            myButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0),
+            myButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
 }

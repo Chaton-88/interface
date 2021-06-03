@@ -10,69 +10,73 @@ import UIKit
 
 class ProfileHeaderView: UIView {
     
-    private let userImage = UIImageView(image: UIImage(named: "unnamed.jpeg"))
-    private let userNickname = UILabel()
-    private let userStatus = UILabel()
-    private let showStatusButton = UIButton()
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var setStatusButton: UIButton!
+    @IBOutlet weak var statusTextField: UITextField!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
-        setupUI()
+        configureAvatarImageView()
+        configureFullNameLabel()
+        configureStatusLabel()
+        configureSetStatusButton()
+        configureStatusTextField()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func configureAvatarImageView() {
+        avatarImageView.layer.borderWidth = 3
+        avatarImageView.layer.borderColor = UIColor.white.cgColor
+        avatarImageView.layer.cornerRadius = avatarImageView.bounds.size.width/2
+        avatarImageView.clipsToBounds = true
+    }
+    func configureFullNameLabel() {
+        fullNameLabel.text = "Incognito"
+        fullNameLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        fullNameLabel.textColor = .black
+    }
+    func configureStatusLabel() {
+        statusLabel.text = "Waiting for something..."
+        statusLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        statusLabel.textColor = .gray
     }
     
-    func setupUI() {
-        userImage.layer.borderWidth = 3
-        userImage.layer.borderColor = UIColor.white.cgColor
-        userImage.clipsToBounds = true
-        
-        userNickname.text = "Incognito"
-        userNickname.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        userNickname.textColor = .black
-        
-        userStatus.text = "Waiting for something..."
-        userStatus.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        userStatus.textColor = .gray
-        
-        showStatusButton.setTitle("Show status", for: .normal)
-        showStatusButton.setTitleColor(.white, for: .normal)
-        showStatusButton.backgroundColor = .blue
-        showStatusButton.layer.cornerRadius = 14
-        showStatusButton.layer.shadowOffset.width = 4
-        showStatusButton.layer.shadowOffset.height = 4
-        showStatusButton.layer.shadowRadius = 4
-        showStatusButton.layer.shadowColor = UIColor.black.cgColor
-        showStatusButton.layer.shadowOpacity = 0.7
-        showStatusButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        
-        addSubview(userImage)
-        addSubview(userNickname)
-        addSubview(userStatus)
-        addSubview(showStatusButton)
+    func configureSetStatusButton() {
+        setStatusButton.setTitle("Show status", for: .normal)
+        setStatusButton.setTitleColor(.white, for: .normal)
+        setStatusButton.backgroundColor = .blue
+        setStatusButton.layer.cornerRadius = 14
+        setStatusButton.layer.shadowOffset.width = 4
+        setStatusButton.layer.shadowOffset.height = 4
+        setStatusButton.layer.shadowRadius = 4
+        setStatusButton.layer.shadowColor = UIColor.black.cgColor
+        setStatusButton.layer.shadowOpacity = 0.7
+        setStatusButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        configureFrames()
-    }
-    
-    func configureFrames() {
-        userImage.frame = CGRect(x: self.safeAreaInsets.left + 16, y: self.safeAreaInsets.top + 16, width: 110, height: 110)
-        userImage.layer.cornerRadius = userImage.frame.size.width/2
-        
-        userNickname.frame = CGRect(x: self.safeAreaInsets.left + 150, y: self.safeAreaInsets.top + 27, width: 100, height: 20)
-        
-        userStatus.frame = CGRect(x: self.safeAreaInsets.left + 150, y: self.safeAreaInsets.top + 16 + userImage.bounds.height + 16 - 34 - userStatus.bounds.height, width: 250, height: 18)
-        
-        showStatusButton.frame = CGRect(x: self.safeAreaInsets.left + 16, y: userImage.frame.maxY + 16, width: self.bounds.width - self.safeAreaInsets.left - self.safeAreaInsets.right - 16 * 2, height: 50)
+    func configureStatusTextField() {
+        statusTextField.backgroundColor = .white
+        statusTextField.textColor = .black
+        statusTextField.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        statusTextField.layer.cornerRadius = 12
+        statusTextField.layer.borderWidth = 1
+        statusTextField.layer.borderColor = UIColor.black.cgColor
+        statusTextField.clipsToBounds = true
+        statusTextField.placeholder = "Enter the status"
+        statusTextField.addTarget(self, action: #selector(statusTextChanged(_ :)), for: .editingChanged)
     }
     
     @objc func buttonPressed() {
-        print(userStatus.text ?? "User status is missing")
+        statusLabel.text = "\(statusText)"
+    }
+    
+    private var statusText: String = ""
+    
+    @objc func statusTextChanged(_ textField: UITextField) {
+        statusText = statusTextField.text!
     }
 }
+
