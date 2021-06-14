@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZwS-K6-ZGq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397" y="197"/>
+            <point key="canvasLocation" x="1464" y="197"/>
         </scene>
         <!--Feed-->
         <scene sceneID="pR1-4r-6ob">
@@ -249,7 +249,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="YmO-AU-VzM" kind="show" id="HKV-UZ-Unz"/>
+                        <segue destination="YmO-AU-VzM" kind="relationship" relationship="rootViewController" id="l9l-Zw-rdr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8b-38-THj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -261,7 +261,7 @@
             <objects>
                 <viewController id="YmO-AU-VzM" customClass="LogInViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QAY-cl-ppB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="F5I-iX-bag"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -270,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4z-bc-rGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="626" y="197"/>
+            <point key="canvasLocation" x="681" y="197"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
