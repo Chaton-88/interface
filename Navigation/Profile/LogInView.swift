@@ -8,7 +8,13 @@
 
 import UIKit
 
-class LogInView: UIView {
+protocol LogInViewDelegate {
+    func tapButton()
+}
+
+class LogInView: UIView, UITextFieldDelegate {
+    
+    var delegate: LogInViewDelegate?
     
     private let imageView: UIImageView = {
         var imageView = UIImageView()
@@ -45,6 +51,7 @@ class LogInView: UIView {
         loginTextField.autocapitalizationType = .none
         loginTextField.font = UIFont.systemFont(ofSize: 16)
         loginTextField.placeholder = "Email of phone"
+        loginTextField.returnKeyType = .done
         loginTextField.toAutoLayout()
         return loginTextField
     }()
@@ -56,6 +63,7 @@ class LogInView: UIView {
         passwordTextField.font = UIFont.systemFont(ofSize: 16)
         passwordTextField.placeholder = "Password"
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.returnKeyType = .done
         passwordTextField.toAutoLayout()
         return passwordTextField
     }()
@@ -68,6 +76,7 @@ class LogInView: UIView {
         setProfileButton.layer.cornerRadius = 10
         setProfileButton.clipsToBounds = true
         setProfileButton.toAutoLayout()
+        setProfileButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
         return setProfileButton
     }()
     
@@ -125,14 +134,24 @@ class LogInView: UIView {
             setProfileButton.heightAnchor.constraint(equalToConstant: 50),
             setProfileButton.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
+        
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.endEditing(true)
+        return false
+    }
+    
+    @objc private func tapButton() {
+        delegate?.tapButton()
+    }
 }
 
-   
 
 
