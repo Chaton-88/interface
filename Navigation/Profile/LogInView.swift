@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol LogInViewDelegate {
-    func tapButton()
+protocol LogInViewDelegate: class {
+    func tap()
 }
 
 class LogInView: UIView, UITextFieldDelegate {
     
-    var delegate: LogInViewDelegate?
+    weak var delegate: LogInViewDelegate?
     
     private let imageView: UIImageView = {
         var imageView = UIImageView()
@@ -90,6 +90,9 @@ class LogInView: UIView, UITextFieldDelegate {
         passwordView.toAutoLayout()
         loginView.toAutoLayout()
         laneView.toAutoLayout()
+       
+        self.loginTextField.delegate = self
+        self.passwordTextField.delegate = self
         
         NSLayoutConstraint.activate([
             
@@ -100,8 +103,8 @@ class LogInView: UIView, UITextFieldDelegate {
             
             containerView.topAnchor.constraint(equalTo: loginView.topAnchor),
             containerView.bottomAnchor.constraint(equalTo: passwordView.bottomAnchor),
-            containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            containerView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            containerView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             
             loginView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 120),
             loginView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: .zero),
@@ -129,15 +132,13 @@ class LogInView: UIView, UITextFieldDelegate {
             passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
             setProfileButton.topAnchor.constraint(equalTo: passwordView.bottomAnchor, constant: 16),
-            setProfileButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            setProfileButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            setProfileButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor,
+                                                       constant: -16),
+            setProfileButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             setProfileButton.heightAnchor.constraint(equalToConstant: 50),
             setProfileButton.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
-        
-        loginTextField.delegate = self
-        passwordTextField.delegate = self
-    }
+        }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -148,8 +149,8 @@ class LogInView: UIView, UITextFieldDelegate {
         return false
     }
     
-    @objc private func tapButton() {
-        delegate?.tapButton()
+    @objc func tapButton() {
+        delegate?.tap()
     }
 }
 

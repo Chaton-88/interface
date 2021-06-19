@@ -10,6 +10,7 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
+    
     private let scrollView = UIScrollView()
     private let logInView = LogInView()
     
@@ -24,6 +25,8 @@ class LogInViewController: UIViewController {
         scrollView.addSubview(logInView)
         
         configureConstraints()
+        
+        logInView.delegate = self
     }
     
     func configureConstraints() {
@@ -83,8 +86,7 @@ extension UIView {
 }
 
 extension LogInViewController: LogInViewDelegate {
-    
-    func tapButton() {
+    func tap() {
         let vc = storyboard?.instantiateViewController(identifier: "ProfileVC")
         navigationController?.pushViewController(vc!, animated: true)
     }
