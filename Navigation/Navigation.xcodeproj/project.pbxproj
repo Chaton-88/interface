@@ -10,9 +10,9 @@
 		041464D92676829F008F599F /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041464D82676829F008F599F /* LogInView.swift */; };
 		0461D98E266C200A0098B8AC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0461D98D266C200A0098B8AC /* Colors.xcassets */; };
 		0461D990266C210B0098B8AC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461D98F266C210B0098B8AC /* LogInViewController.swift */; };
-		047626B3266FE61E00A8AED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047626B2266FE61E00A8AED1 /* Assets.xcassets */; };
 		04CCBC2D2657E17F0075342C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCBC2C2657E17F0075342C /* ProfileViewController.swift */; };
 		04CCBC2F2657E1B00075342C /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCBC2E2657E1B00075342C /* ProfileHeaderView.swift */; };
+		04E60BFF2689162B00247F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E60BFE2689162B00247F6F /* Assets.xcassets */; };
 		060782B2250CE27700A87020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782B1250CE27700A87020 /* AppDelegate.swift */; };
 		060782B4250CE27700A87020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782B3250CE27700A87020 /* SceneDelegate.swift */; };
 		060782B6250CE27700A87020 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782B5250CE27700A87020 /* FeedViewController.swift */; };
@@ -27,9 +27,9 @@
 		041464D82676829F008F599F /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		0461D98D266C200A0098B8AC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0461D98F266C210B0098B8AC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		047626B2266FE61E00A8AED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		04CCBC2C2657E17F0075342C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		04CCBC2E2657E1B00075342C /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		04E60BFE2689162B00247F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		060782AE250CE27700A87020 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		060782B1250CE27700A87020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		060782B3250CE27700A87020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,8 +91,8 @@
 				060782C5250CEB0A00A87020 /* InfoViewController.swift */,
 				060782C9250CEE7200A87020 /* Post.swift */,
 				060782B7250CE27700A87020 /* Main.storyboard */,
+				04E60BFE2689162B00247F6F /* Assets.xcassets */,
 				0461D98D266C200A0098B8AC /* Colors.xcassets */,
-				047626B2266FE61E00A8AED1 /* Assets.xcassets */,
 				060782BC250CE27A00A87020 /* LaunchScreen.storyboard */,
 				060782BF250CE27A00A87020 /* Info.plist */,
 			);
@@ -159,7 +159,7 @@
 			files = (
 				060782BE250CE27A00A87020 /* LaunchScreen.storyboard in Resources */,
 				0461D98E266C200A0098B8AC /* Colors.xcassets in Resources */,
-				047626B3266FE61E00A8AED1 /* Assets.xcassets in Resources */,
+				04E60BFF2689162B00247F6F /* Assets.xcassets in Resources */,
 				060782B9250CE27700A87020 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
