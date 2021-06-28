@@ -10,23 +10,46 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    let myButton: UIButton = {
-        let myButton = UIButton()
-        myButton.setTitle("My button", for: .normal)
-        myButton.setTitleColor(.white, for: .normal)
-        myButton.backgroundColor = .blue
-        return myButton
-    }()
+    private let tableView = UITableView(frame: .zero, style: .grouped)
+    private let identifier = "idCell"
+    
+    private let publication: [String] = ["discovery", "kinoPoisk"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(myButton)
-        myButton.translatesAutoresizingMaskIntoConstraints = false
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        view.addSubview(tableView)
+        
+        tableView.toAutoLayout()
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: identifier)
+        
         NSLayoutConstraint.activate([
-            myButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
-            myButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0),
-            myButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+}
+
+// MARK: UITableViewDataSource
+extension ProfileViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return publication.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath)
+        cell.textLabel?.text = publication[indexPath.row]
+        
+        return cell
+    }
+
 }
