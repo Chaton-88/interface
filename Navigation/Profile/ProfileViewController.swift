@@ -13,8 +13,6 @@ class ProfileViewController: UIViewController {
     private let tableView = UITableView(frame: .zero, style: .grouped)
     private let identifier = "idCell"
     
-    private let publication: [String] = ["discovery", "kinoPoisk"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +24,7 @@ class ProfileViewController: UIViewController {
         
         tableView.toAutoLayout()
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: identifier)
+        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: identifier)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -42,12 +40,13 @@ extension ProfileViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return publication.count
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath)
-        cell.textLabel?.text = publication[indexPath.row]
+        
+        let cell: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath) as! ProfileTableViewCell
+        cell.post = Section.publication[indexPath.section].post[indexPath.row]
         
         return cell
     }
