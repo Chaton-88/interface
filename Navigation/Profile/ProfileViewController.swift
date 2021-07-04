@@ -26,10 +26,6 @@ class ProfileViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "idCell")
-        
-        let header = ProfileTableHeaderView()
-        tableView.tableHeaderView = header
-        
         tableView.register(ProfileTableHeaderView.self, forHeaderFooterViewReuseIdentifier: ProfileTableHeaderView.headerId)
         
         NSLayoutConstraint.activate([
@@ -45,12 +41,11 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+       
         let cell: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath) as! ProfileTableViewCell
         cell.post = Section.publication[indexPath.section].post[indexPath.row]
         
@@ -58,17 +53,14 @@ extension ProfileViewController: UITableViewDataSource {
     }
 }
 
-//// MARK: UITableViewDelegate
+// MARK: UITableViewDelegate
 extension ProfileViewController: UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-       let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProfileTableHeaderView.headerId) as? ProfileTableHeaderView
-
-        //headerView?.headerView[section]
-
-        //headerView?.headerView = deviceSection
-
+        
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProfileTableHeaderView.headerId) as? ProfileTableHeaderView
+        
         return headerView
     }
-
 }
+
