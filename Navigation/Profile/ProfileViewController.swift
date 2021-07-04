@@ -24,7 +24,13 @@ class ProfileViewController: UIViewController {
         
         tableView.toAutoLayout()
         tableView.dataSource = self
-        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: identifier)
+        tableView.delegate = self
+        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "idCell")
+        
+        let header = ProfileTableHeaderView()
+        tableView.tableHeaderView = header
+        
+        tableView.register(ProfileTableHeaderView.self, forHeaderFooterViewReuseIdentifier: ProfileTableHeaderView.headerId)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -49,6 +55,20 @@ extension ProfileViewController: UITableViewDataSource {
         cell.post = Section.publication[indexPath.section].post[indexPath.row]
         
         return cell
+    }
+}
+
+//// MARK: UITableViewDelegate
+extension ProfileViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+       let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProfileTableHeaderView.headerId) as? ProfileTableHeaderView
+
+        //headerView?.headerView[section]
+
+        //headerView?.headerView = deviceSection
+
+        return headerView
     }
 
 }
