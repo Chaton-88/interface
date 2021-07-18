@@ -15,7 +15,6 @@ class ProfileHeaderView: UIView {
         avatarImageView.layer.borderWidth = 3
         avatarImageView.layer.borderColor = UIColor.white.cgColor
         avatarImageView.layer.cornerRadius = 55
-        //avatarImageView.contentMode = .scaleAspectFill
         avatarImageView.clipsToBounds = true
         avatarImageView.toAutoLayout()
         return avatarImageView
@@ -109,7 +108,6 @@ class ProfileHeaderView: UIView {
             
             statusTextField.leadingAnchor.constraint(equalTo: statusTextLabel.leadingAnchor, constant: 10),
             statusTextField.trailingAnchor.constraint(equalTo: statusTextLabel.trailingAnchor, constant: .zero),
-           // statusTextField.heightAnchor.constraint(equalToConstant: 40),
             statusTextField.topAnchor.constraint(equalTo: statusTextLabel.topAnchor, constant: .zero),
             statusTextField.bottomAnchor.constraint(equalTo: statusTextLabel.bottomAnchor, constant: .zero),
             

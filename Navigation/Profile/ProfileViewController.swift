@@ -11,7 +11,9 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     private let tableView = UITableView(frame: .zero, style: .grouped)
-    private let identifier = "idCell"
+  
+    private let identifierOneCell = "idOneCell"
+    private let identifierTwoCell = "idTwoCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,8 @@ class ProfileViewController: UIViewController {
         tableView.toAutoLayout()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "idCell")
+        tableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: "idOneCell")
+        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "idTwoCell")
         tableView.register(ProfileTableHeaderView.self, forHeaderFooterViewReuseIdentifier: ProfileTableHeaderView.headerId)
         
         NSLayoutConstraint.activate([
@@ -40,27 +43,52 @@ class ProfileViewController: UIViewController {
 // MARK: UITableViewDataSource
 extension ProfileViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        if section == 0 {
+            return 1
+        } else {
+            return 4
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
-        let cell: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath) as! ProfileTableViewCell
-        cell.post = Section.publication[indexPath.section].post[indexPath.row]
         
-        return cell
+        if indexPath.section == 0 {
+            let cellOne: PhotosTableViewCell = tableView.dequeueReusableCell(withIdentifier: "idOneCell", for: indexPath) as! PhotosTableViewCell
+            cellOne.cell = photos
+            return cellOne
+        } else {
+            let cellTwo: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: "idTwoCell", for: indexPath) as! ProfileTableViewCell
+            cellTwo.post = Section.publication.post[indexPath.row]
+            return cellTwo
+        }
     }
 }
+
 
 // MARK: UITableViewDelegate
 extension ProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+       
+        guard section == 0 else {
+            return nil
+        }
         
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProfileTableHeaderView.headerId) as? ProfileTableHeaderView
-        
         return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        guard section == 1 else {
+            return ProfileTableViewCell.noIntrinsicMetric
+        }
+        return 1
     }
 }
 
