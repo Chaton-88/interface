@@ -90,5 +90,15 @@ extension ProfileViewController: UITableViewDelegate {
         }
         return 1
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 0  {
+            
+            let destination = PhotosViewController()
+            navigationController?.pushViewController(destination, animated: true)
+        }
+    }
 }
+
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04131AF2268A46B2003EFF8D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04131AF1268A46B2003EFF8D /* ProfileTableViewCell.swift */; };
 		041464D92676829F008F599F /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041464D82676829F008F599F /* LogInView.swift */; };
+		0441A77826A5FE3600D4FB60 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441A77726A5FE3600D4FB60 /* PhotosViewController.swift */; };
 		04561CA02689264800054BB1 /* PostVk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04561C9F2689264800054BB1 /* PostVk.swift */; };
 		045D1566268CE9F900E82C38 /* ProfileTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D1565268CE9F900E82C38 /* ProfileTableHeaderView.swift */; };
 		0461D98E266C200A0098B8AC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0461D98D266C200A0098B8AC /* Colors.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		04131AF1268A46B2003EFF8D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		041464D82676829F008F599F /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		0441A77726A5FE3600D4FB60 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		04561C9F2689264800054BB1 /* PostVk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVk.swift; sourceTree = "<group>"; };
 		045D1565268CE9F900E82C38 /* ProfileTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableHeaderView.swift; sourceTree = "<group>"; };
 		0461D98D266C200A0098B8AC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		04CCBC2B2657E11B0075342C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				0441A77726A5FE3600D4FB60 /* PhotosViewController.swift */,
 				04CCBC2C2657E17F0075342C /* ProfileViewController.swift */,
 				04131AF1268A46B2003EFF8D /* ProfileTableViewCell.swift */,
 				04AC1FAC2698E5C40019AE39 /* PhotosTableViewCell.swift */,
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				041464D92676829F008F599F /* LogInView.swift in Sources */,
+				0441A77826A5FE3600D4FB60 /* PhotosViewController.swift in Sources */,
 				045D1566268CE9F900E82C38 /* ProfileTableHeaderView.swift in Sources */,
 				060782B6250CE27700A87020 /* FeedViewController.swift in Sources */,
 				060782B2250CE27700A87020 /* AppDelegate.swift in Sources */,
