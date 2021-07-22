@@ -15,7 +15,8 @@ struct PhotosCell {
     let imageTwo: String
     let imageThree: String
     let imageFour: String
+    let imageArrow: String
 }
 
-var photos = PhotosCell(title: "Fhotos", imageOne: "formas", imageTwo: "dog", imageThree: "baby", imageFour: "coffee_smilies")
+var photos = PhotosCell(title: "Fhotos", imageOne: "formas", imageTwo: "dog", imageThree: "baby", imageFour: "coffee_smilies", imageArrow: "arrow.forward")
 

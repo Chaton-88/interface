@@ -17,6 +17,7 @@ class PhotosTableViewCell: UITableViewCell {
             photoTwoImageView.image = UIImage(named: cell?.imageTwo ?? "the image is missing")
             photoThreeImageView.image = UIImage(named: cell?.imageThree ?? "the image is missing")
             photoFourImageView.image = UIImage(named: cell?.imageFour ?? "the image is missing")
+            arrowImageView.image = UIImage(systemName: cell?.imageArrow ?? "the image is missing")
         }
     }
 
@@ -61,6 +62,12 @@ class PhotosTableViewCell: UITableViewCell {
         return photoFourImageView
     }()
     
+    private let arrowImageView: UIImageView = {
+        let allowImageView = UIImageView()
+        allowImageView.toAutoLayout()
+        return allowImageView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -72,7 +79,7 @@ class PhotosTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-        contentView.addSubviews(photoLabel, photoOneImageView, photoTwoImageView, photoThreeImageView, photoFourImageView)
+        contentView.addSubviews(photoLabel, photoOneImageView, photoTwoImageView, photoThreeImageView, photoFourImageView, arrowImageView)
         
         NSLayoutConstraint.activate ([
             photoLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
@@ -108,6 +115,10 @@ class PhotosTableViewCell: UITableViewCell {
             photoFourImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
             photoFourImageView.heightAnchor.constraint(equalTo: photoOneImageView.heightAnchor),
             photoFourImageView.widthAnchor.constraint(equalTo: photoOneImageView.widthAnchor),
+            
+            arrowImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            arrowImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
+            arrowImageView.bottomAnchor.constraint(equalTo: photoFourImageView.topAnchor, constant: -12)
         ])
     }
 }
