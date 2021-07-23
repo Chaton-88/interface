@@ -81,7 +81,6 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: widthForCell, height: widthForCell)
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: baseInset, left: baseInset, bottom: baseInset, right: baseInset)
     }

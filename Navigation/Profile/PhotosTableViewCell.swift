@@ -64,6 +64,7 @@ class PhotosTableViewCell: UITableViewCell {
     
     private let arrowImageView: UIImageView = {
         let allowImageView = UIImageView()
+        allowImageView.tintColor = .black
         allowImageView.toAutoLayout()
         return allowImageView
     }()
