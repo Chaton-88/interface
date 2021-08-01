@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LogInViewDelegate: class {
+protocol LogInViewDelegate: AnyObject {
     func tap()
 }
 

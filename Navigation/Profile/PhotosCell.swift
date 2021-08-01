@@ -11,12 +11,7 @@ import UIKit
 struct PhotosCell {
     
     let title: String
-    let imageOne: String
-    let imageTwo: String
-    let imageThree: String
-    let imageFour: String
     let imageArrow: String
 }
 
-var photos = PhotosCell(title: "Fhotos", imageOne: "formas", imageTwo: "dog", imageThree: "baby", imageFour: "coffee_smilies", imageArrow: "arrow.forward")
-
+var photos = PhotosCell(title: "Photos", imageArrow: "arrow.forward")

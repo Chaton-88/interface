@@ -74,7 +74,7 @@ extension ProfileViewController: UITableViewDataSource {
 extension ProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-       
+        
         guard section == 0 else {
             return nil
         }
@@ -85,10 +85,10 @@ extension ProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        guard section == 1 else {
-            return ProfileTableViewCell.noIntrinsicMetric
+        guard section == 0 else {
+            return 0
         }
-        return 1
+        return ProfileTableHeaderView.noIntrinsicMetric
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

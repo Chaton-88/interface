@@ -10,8 +10,6 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     
-    private let photosCell = [UIImage(named: "formas"), UIImage(named: "dog"), UIImage(named: "baby"), UIImage(named: "coffee_smilies"), UIImage(named: "apple"), UIImage(named: "baby_original"),UIImage(named: "boss"), UIImage(named: "cat"), UIImage(named: "dog_serious"), UIImage(named: "mult_one"), UIImage(named: "mult_two"), UIImage(named: "mult_three"), UIImage(named: "mult_four"), UIImage(named: "rabbit"), UIImage(named: "sack_boy"), UIImage(named: "robot"), UIImage(named: "strawberry"), UIImage(named: "success"),UIImage(named: "turtle"), UIImage(named: "warcraft")]
-    
     private let layout = UICollectionViewFlowLayout()
     
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -61,15 +59,14 @@ private extension PhotosViewController {
 extension PhotosViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photosCell.count
+        return photosImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotosCollectionViewCell.self), for: indexPath) as! PhotosCollectionViewCell
         
-        cell.photo = photosCell[indexPath.row]
-        
+        cell.photo = photosImage[indexPath.row]
         return cell
     }
 }
@@ -84,11 +81,11 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: baseInset, left: baseInset, bottom: baseInset, right: baseInset)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return baseInset
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return .zero
     }

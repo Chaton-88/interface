@@ -10,16 +10,16 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
     
-    var photo: UIImage? {
+    var photo: String? {
         
         didSet {
-            imageCollection.image = photo
+            imageCollection.image = UIImage(named: photo ?? "the image is missing")
         }
     }
     
     private let imageCollection: UIImageView = {
         let imageCollection = UIImageView()
-        imageCollection.contentMode = .scaleToFill
+        imageCollection.contentMode = .scaleAspectFill
         imageCollection.backgroundColor = .white
         imageCollection.clipsToBounds = true
         imageCollection.toAutoLayout()
