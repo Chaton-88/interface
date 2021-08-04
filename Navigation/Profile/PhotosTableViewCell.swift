@@ -56,7 +56,7 @@ class PhotosTableViewCell: UITableViewCell {
         contentView.addSubviews(photoLabel, stackView, arrowImageView)
         
         for i in 0...3 {
-            let image = photosImage[i]
+            let image = Storage.photosImage[i]
             let imageView = UIImageView()
             imageView.image = UIImage(named: image)
             imageView.clipsToBounds = true
